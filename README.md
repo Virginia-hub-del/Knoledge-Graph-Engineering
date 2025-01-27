@@ -95,7 +95,3 @@ If you would like to contribute to the project, please follow these steps:
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 ```
-
----
-
-This is the exact text you can copy and paste directly into your GitHub README.md file for the project. It covers the description of the project, how to execute the code, details about the repository structure, metadata definition, open issues, and contributing guidelines, tailored to your provided report.
