@@ -1,4 +1,3 @@
-```markdown
 # KGE-2024 Knowledge Graph Project
 
 ## Project Description
