@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KGE 2024 - Ecological Relations Between Members of the Microbiome</title>
+    <title>KGE 2025 - Ecological Relations Between Members of the Microbiome</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -34,18 +34,31 @@
 </head>
 <body>
     <div class="content">
-        <h1>Welcome to the Knowledge Graph Project</h1>
-        <p>This is the project page where you can find information about the project on the Knowledge Graph.</p>
+        <h1>This is the project page where you can find information about the Knowledge Graph Engineering (KGE) project.</h1>
 
         <div class="section-header">
             <h2>1. Introduction</h2>
         </div>
-        <p>The Knowledge Graph Project aims to model the relationships between various biological entities to better understand and predict patterns in human health, particularly with regard to cancer risk and microbiome analysis. The project uses data from various sources to construct a knowledge graph that integrates biological and medical data, enabling more effective analysis and discovery.</p>
+        <p>Microbial communities, or microbiomes, are complex networks of microorganisms—such as bacteria, archaea, fungi, and viruses—that interact in various environments, from soil and water ecosystems to the human body. These interactions, including competition, cooperation, and predation, shape the community dynamics and influence the survival of specific species. Microbes respond to factors like nutrient availability, pH, and the introduction of new species, affecting the microbiome’s structure, function, and stability. For example, some microbes compete for resources, while others form symbiotic relationships, benefiting from each other's by-products. These ecological interactions contribute to the resilience and adaptability of microbial ecosystems, influencing broader ecological and host-related processes.</p>
+
+        <p>To measure the relative abundance of microbial species, several techniques are used, including flow cytometry, microarrays, ribosomal RNA analysis, and metagenomic sequencing. Clustering of sequence data with reference databases is essential for determining overall abundances and taxonomic classifications.</p>
 
         <div class="section-header">
             <h2>2. Information Gathering</h2>
         </div>
-        <p>The project started by gathering extensive information about cancer risk, microbiomes, and human health. Key data sources included medical journals, online databases, and existing research on cancer biology. A comprehensive set of data was collected to build the knowledge graph, ensuring it could be used for further analysis and model building.</p>
+        <p>The project started by gathering relevant data from the curatedMetagenomicData (cMD) package in R, which includes microbiome data from several independent studies. This data provides detailed information on gene families, marker abundance, pathway coverage, and relative abundance for each collected sample. The focus of the information gathering process was on obtaining relative abundance data, which was then used to identify patterns of microbial variation across healthy individuals and those with colorectal cancer. Factors such as smoking, alcohol consumption, and disease location were considered to enhance the understanding of species interactions and the relationship between microbial composition and health conditions.</p>
+        
+        <p>Competency Questions are used to validate the functionality of the knowledge graph. The questions below are based on hypothetical personas and situations:</p>
+        <ul>
+            <li><strong>CQ-1 (P1-S1):</strong> Haruto is curious about how different microbes in his body interact and whether these interactions could impact his health, especially given his recent stage I cancer diagnosis and his long history of smoking.</li>
+            <li><strong>CQ-2 (P2-S2):</strong> Yuki doesn’t understand why he is finally losing weight. Could he be facing an imbalance of the microbiome that impacted his weight?</li>
+            <li><strong>CQ-3 (P3-S3):</strong> Given that Emiko is a healthy woman, what can be observed in the relative abundances of her microbiome?</li>
+            <li><strong>CQ-4 (P4-S1):</strong> Given Riku’s stage IV cancer diagnosis, which microbial species are characteristic of advanced patients with cancer?</li>
+            <li><strong>CQ-5 (P5-S3):</strong> After noticing blood in his stool, Kaito is anxious about his health. Can we infer if he has a high chance of developing gastrointestinal problems?</li>
+            <li><strong>CQ-6 (P6-S2):</strong> How does Aiko’s alcohol consumption influence the composition and abundance of bacteria in her microbiome?</li>
+            <li><strong>CQ-7 (P7-S1):</strong> Hana, in good health, wonders about positive co-occurrence relationships in her microbiome.</li>
+            <li><strong>CQ-8 (P8-S2):</strong> Ren is curious about his high levels of Helicobacter pylori. How does its abundance correlate with other microbial species?</li>
+        </ul>
 
         <div class="section-header">
             <h2>3. Language Definition</h2>
@@ -76,21 +89,6 @@
             <h2>8. Open Issues</h2>
         </div>
         <p>This section addresses the remaining challenges that were not fully resolved during the project. Some issues include gaps in the data and difficulty in integrating certain datasets. Solutions were proposed but were not fully implemented due to time constraints.</p>
-
-        <div class="section-header">
-            <h2>Competency Questions (CQs)</h2>
-        </div>
-        <p>Competency Questions are used to validate the functionality of the knowledge graph. The questions below are based on hypothetical personas and situations:</p>
-        <ul>
-            <li><strong>CQ-1 (P1-S1):</strong> Haruto is curious about how different microbes in his body interact and whether these interactions could impact his health, especially given his recent stage I cancer diagnosis and his long history of smoking.</li>
-            <li><strong>CQ-2 (P2-S2):</strong> Yuki doesn’t understand why he is finally losing weight. Could he be facing an imbalance of the microbiome that impacted his weight?</li>
-            <li><strong>CQ-3 (P3-S3):</strong> Given that Emiko is a healthy woman, what can be observed in the relative abundances of her microbiome?</li>
-            <li><strong>CQ-4 (P4-S1):</strong> Given Riku’s stage IV cancer diagnosis, which microbial species are characteristic of advanced patients with cancer?</li>
-            <li><strong>CQ-5 (P5-S3):</strong> After noticing blood in his stool, Kaito is anxious about his health. Can we infer if he has a high chance of developing gastrointestinal problems?</li>
-            <li><strong>CQ-6 (P6-S2):</strong> How does Aiko’s alcohol consumption influence the composition and abundance of bacteria in her microbiome?</li>
-            <li><strong>CQ-7 (P7-S1):</strong> Hana, in good health, wonders about positive co-occurrence relationships in her microbiome.</li>
-            <li><strong>CQ-8 (P8-S2):</strong> Ren is curious about his high levels of Helicobacter pylori. How does its abundance correlate with other microbial species?</li>
-        </ul>
 
         <div class="section-header">
             <h2>Revision History</h2>
