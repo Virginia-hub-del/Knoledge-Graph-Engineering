@@ -1,0 +1,347 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/virgi/ontologies/2024/10/untitled-ontology-4/"
+     xml:base="http://www.semanticweb.org/virgi/ontologies/2024/10/untitled-ontology-4/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:etype="http://knowdive.disi.unitn.it/etype#"
+     xmlns:untitled-ontology-4="http://www.semanticweb.org/virgi/ontologies/2024/10/untitled-ontology-4#">
+    <owl:Ontology rdf:about="http://knowdive.disi.unitn.it/etype"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#isEtype -->
+
+    <owl:AnnotationProperty rdf:about="http://knowdive.disi.unitn.it/etype#isEtype"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#has_Diagnosis -->
+
+    <owl:ObjectProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_Diagnosis">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#Person_UKC-36"/>
+        <rdfs:range rdf:resource="http://knowdive.disi.unitn.it/etype#Cancer_UKC-67961"/>
+        <rdfs:comment>a person diagnosed with a particular cancer</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#has_Interaction -->
+
+    <owl:ObjectProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_Interaction">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#Person_UKC-36"/>
+        <rdfs:range rdf:resource="http://knowdive.disi.unitn.it/etype#Human-Microbiome-Interaction"/>
+        <rdfs:comment>A species has an interaction with a particular person</rdfs:comment>
+        <rdfs:isDefinedBy>KGE-QCB1-3</rdfs:isDefinedBy>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#has_Risk_Factors -->
+
+    <owl:ObjectProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_Risk_Factors">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#Person_UKC-36"/>
+        <rdfs:range rdf:resource="http://knowdive.disi.unitn.it/etype#Risk_factors_KGE-QCB1-1"/>
+        <rdfs:comment>A person is associated with risk factors.</rdfs:comment>
+        <rdfs:isDefinedBy>KGE-QCB1-4</rdfs:isDefinedBy>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#has_Spiecies -->
+
+    <owl:ObjectProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_Spiecies">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#Person_UKC-36"/>
+        <rdfs:range rdf:resource="http://knowdive.disi.unitn.it/etype#Microbiome"/>
+        <etype:isEtype></etype:isEtype>
+        <rdfs:comment>A person has a taxonomic group whose members can interbreed.</rdfs:comment>
+        <rdfs:isDefinedBy>KGE-QCB1-2</rdfs:isDefinedBy>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#has_Age -->
+
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_Age">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#Person_UKC-36"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <etype:isEtype rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"></etype:isEtype>
+        <rdfs:comment>How long something has existed</rdfs:comment>
+        <rdfs:isDefinedBy>UKC-26728</rdfs:isDefinedBy>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#has_Alcohol_Level -->
+
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_Alcohol_Level">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#Risk_factors_KGE-QCB1-1"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#real"/>
+        <etype:isEtype rdf:datatype="http://www.w3.org/2001/XMLSchema#float"></etype:isEtype>
+        <rdfs:comment>Is a measure of alcohol in the blood as a percentage.</rdfs:comment>
+        <rdfs:isDefinedBy>KGE-QCB1-7</rdfs:isDefinedBy>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#has_BMI -->
+
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_BMI">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#Risk_factors_KGE-QCB1-1"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#real"/>
+        <etype:isEtype rdf:datatype="http://www.w3.org/2001/XMLSchema#float"></etype:isEtype>
+        <rdfs:comment>An indicator of body density as determined by the relationship of BODY WEIGHT to BODY HEIGHT. BMI=weight (kg)/height squared (m2).</rdfs:comment>
+        <rdfs:isDefinedBy>http://purl.bioontology.org/ontology/MESH/D015992</rdfs:isDefinedBy>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#has_Brinkman_Index -->
+
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_Brinkman_Index">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#Risk_factors_KGE-QCB1-1"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#real"/>
+        <etype:isEtype rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"></etype:isEtype>
+        <rdfs:comment>Is calculated form cigarettes per day times smoking years.</rdfs:comment>
+        <rdfs:isDefinedBy>KGE-QCB1-5</rdfs:isDefinedBy>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#has_Country -->
+
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_Country">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#Person_UKC-36"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <etype:isEtype></etype:isEtype>
+        <rdfs:comment>The territory occupied by a nation</rdfs:comment>
+        <rdfs:isDefinedBy>UKC-45187</rdfs:isDefinedBy>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#has_Gender -->
+
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_Gender">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#Person_UKC-36"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <etype:isEtype></etype:isEtype>
+        <rdfs:comment>The properties that distinguish organisms on the basis of their reproductive roles</rdfs:comment>
+        <rdfs:isDefinedBy>UKC-27174</rdfs:isDefinedBy>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#has_Interaction-ID -->
+
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_Interaction-ID">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#Human-Microbiome-Interaction"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>Identifier for the human-microbioma interaction</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#has_Location -->
+
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_Location">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#Cancer_UKC-67961"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <etype:isEtype></etype:isEtype>
+        <rdfs:comment>Specifies the anatomic site of a localized pathological or traumatic structural change, damage, deformity, or discontinuity of tissue, organ, or body part.</rdfs:comment>
+        <rdfs:isDefinedBy>http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C25341</rdfs:isDefinedBy>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#has_Name -->
+
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_Name">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#Microbiome"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <etype:isEtype></etype:isEtype>
+        <rdfs:comment>A language unit by which a person or thing is known</rdfs:comment>
+        <rdfs:isDefinedBy>UKC-2</rdfs:isDefinedBy>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#has_Relative_Species_Abundance -->
+
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_Relative_Species_Abundance">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#Human-Microbiome-Interaction"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#real"/>
+        <etype:isEtype rdf:datatype="http://www.w3.org/2001/XMLSchema#float"></etype:isEtype>
+        <rdfs:comment>A quality of ecological community that refers to how common or rare a species is relative to other species in a defined location or community</rdfs:comment>
+        <rdfs:isDefinedBy>http://purl.obolibrary.org/obo/OHMI_0000468</rdfs:isDefinedBy>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#has_Stage -->
+
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_Stage">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#Cancer_UKC-67961"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <etype:isEtype rdf:datatype="http://www.w3.org/2001/XMLSchema#integer"></etype:isEtype>
+        <rdfs:comment>It refers to the extent of the disease within the body, ranging from 0 to 4</rdfs:comment>
+        <rdfs:isDefinedBy>KGE-QCB1-8</rdfs:isDefinedBy>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#has_Study_Condition -->
+
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_Study_Condition">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#Person_UKC-36"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <etype:isEtype></etype:isEtype>
+        <rdfs:comment>It determines whether an individual is healthy or affected by a particular cancer</rdfs:comment>
+        <rdfs:isDefinedBy>KGE-QCB1-7</rdfs:isDefinedBy>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#has_Subject-ID -->
+
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_Subject-ID">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#Person_UKC-36"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <etype:isEtype></etype:isEtype>
+        <rdfs:comment>A sequence of characters used to identify, name, or characterize a trial or study subject.</rdfs:comment>
+        <rdfs:isDefinedBy>http://ncicb.nci.nih.gov/xml/owl/EVS/Thesaurus.owl#C83083</rdfs:isDefinedBy>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#has_Taxonomy -->
+
+    <owl:DatatypeProperty rdf:about="http://knowdive.disi.unitn.it/etype#has_Taxonomy">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#Microbiome"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <etype:isEtype></etype:isEtype>
+        <rdfs:comment>A classification of organisms into groups based on similarities of structure or origin etc</rdfs:comment>
+        <rdfs:isDefinedBy>UKC-44477</rdfs:isDefinedBy>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topDataProperty -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topDataProperty">
+        <rdfs:domain rdf:resource="http://knowdive.disi.unitn.it/etype#Microbiome"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#Cancer_UKC-67961 -->
+
+    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#Cancer_UKC-67961">
+        <rdfs:subClassOf rdf:resource="http://knowdive.disi.unitn.it/etype#Entity-GID-1"/>
+        <etype:isEtype></etype:isEtype>
+        <rdfs:comment>Any malignant growth or tumor caused by abnormal and uncontrolled cell division; it may spread to other parts of the body through the lymphatic system or the blood stream</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#Entity-GID-1 -->
+
+    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#Entity-GID-1">
+        <etype:isEtype>a</etype:isEtype>
+    </owl:Class>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#Human-Microbiome-Interaction -->
+
+    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#Human-Microbiome-Interaction">
+        <rdfs:subClassOf rdf:resource="http://knowdive.disi.unitn.it/etype#Entity-GID-1"/>
+        <etype:isEtype rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</etype:isEtype>
+        <rdfs:comment>A host-microbiome interaction where the host is human</rdfs:comment>
+        <rdfs:isDefinedBy>http://purl.obolibrary.org/obo/OHMI_0000019</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#Microbiome -->
+
+    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#Microbiome">
+        <rdfs:subClassOf rdf:resource="http://knowdive.disi.unitn.it/etype#Entity-GID-1"/>
+        <etype:isEtype rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</etype:isEtype>
+        <rdfs:comment>A biome that consists of a collection of microorganisms (i.e., microbiota) and the surrounding environment where the microorganisms reside.</rdfs:comment>
+        <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</rdfs:comment>
+        <rdfs:isDefinedBy>http://purl.obolibrary.org/obo/OHMI_0000003</rdfs:isDefinedBy>
+    </owl:Class>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#Person_UKC-36 -->
+
+    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#Person_UKC-36">
+        <rdfs:subClassOf rdf:resource="http://knowdive.disi.unitn.it/etype#Entity-GID-1"/>
+        <etype:isEtype rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</etype:isEtype>
+        <rdfs:comment>A human being</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://knowdive.disi.unitn.it/etype#Risk_factors_KGE-QCB1-1 -->
+
+    <owl:Class rdf:about="http://knowdive.disi.unitn.it/etype#Risk_factors_KGE-QCB1-1">
+        <rdfs:subClassOf rdf:resource="http://knowdive.disi.unitn.it/etype#Entity-GID-1"/>
+        <etype:isEtype rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</etype:isEtype>
+        <rdfs:comment>Something that makes a person more likely to get a particular disease or condition</rdfs:comment>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
