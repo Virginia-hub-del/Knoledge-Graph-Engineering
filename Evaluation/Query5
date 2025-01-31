@@ -1,0 +1,63 @@
+QUERY 5:
+PREFIX etype: <http://knowdive.disi.unitn.it/etype#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?person ?status ?cig ?gender 
+       (SUM(?ecoli_abundance) AS ?Escherichia_coli_abundance)
+       (SUM(?gnavus_abundance) AS ?Ruminococcus_gnavus_abundance)
+       (ABS(SUM(?ecoli_abundance) - SUM(?gnavus_abundance)) AS ?Abs_Diff_Ecoli_Gnavus)
+       (ABS(SUM(?ecoli_abundance) - ?mean_gnavus_crc) AS ?Abs_Diff_CRC)
+       (ABS(SUM(?ecoli_abundance) - ?mean_gnavus_noncrc) AS ?Abs_Diff_NonCRC)
+WHERE {
+    # Get species of interest
+    ?species rdf:type etype:Microbiome .
+    ?species etype:has_Name ?name .
+    FILTER(?name IN ('[Ruminococcus] gnavus', 'Escherichia coli'))
+
+    ?interaction rdf:type etype:Human-Microbiome-Interaction .
+    ?interaction etype:has_Relative_Species_Abundance ?relative_value .
+    ?species etype:has_Interaction ?interaction .
+
+    # Ensure valid number format
+    BIND(xsd:float(?relative_value) AS ?rel_value)
+
+    # Assign values conditionally
+    BIND(IF(?name = 'Escherichia coli', ?rel_value, 0) AS ?ecoli_abundance)
+    BIND(IF(?name = '[Ruminococcus] gnavus', ?rel_value, 0) AS ?gnavus_abundance)
+
+    # Person details
+    ?person rdf:type etype:Person_UKC-36.
+    ?person etype:has_Spiecies ?species .
+    ?person etype:has_Interaction ?interaction .
+    ?person etype:has_Study_Condition ?status.
+	?person etype:has_Gender ?gender.
+ # Risk factors
+    ?risk rdf:type etype:Risk_factors_KGE-QCB1-1 .
+    ?person etype:has_Risk_Factors ?risk .
+    ?risk etype:has_BMI ?bmi .
+    ?risk etype:has_Brinkman_Index ?cig .
+
+    # Compute mean Ruminococcus gnavus abundance per group
+    {
+        SELECT ?status (AVG(xsd:float(?relative_value)) AS ?mean_gnavus)
+        WHERE {
+            ?species rdf:type etype:Microbiome .
+            ?species etype:has_Name '[Ruminococcus] gnavus' .
+            ?interaction rdf:type etype:Human-Microbiome-Interaction .
+            ?interaction etype:has_Relative_Species_Abundance ?relative_value .
+            ?species etype:has_Interaction ?interaction .
+            ?person rdf:type etype:Person_UKC-36.
+            ?person etype:has_Spiecies ?species .
+            ?person etype:has_Interaction ?interaction .
+            ?person etype:has_Study_Condition ?status.
+        }
+        GROUP BY ?status
+    }
+
+    # Bind mean values separately for CRC and non-CRC
+    BIND(IF(?status = 'CRC', ?mean_gnavus, 0) AS ?mean_gnavus_crc)
+    BIND(IF(?status != 'CRC', ?mean_gnavus, 0) AS ?mean_gnavus_noncrc)
+}
+GROUP BY ?person ?status ?cig ?gender ?mean_gnavus_crc ?mean_gnavus_noncrc
+
