@@ -1,0 +1,45 @@
+QUERY 2: 
+PREFIX etype: <http://knowdive.disi.unitn.it/etype#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+
+select DISTINCT ?person ?species ?relative_value ?stage #(AVG(xsd:float(?relative_value)) AS ?mean)
+where {
+    {select ?name
+        where{ 
+         #get species of interest
+ ?species rdf:type etype:Microbiome .
+ ?species etype:has_Name ?name .
+    #get event of interest (relative abundance)
+  ?interaction rdf:type etype:Human-Microbiome-Interaction .
+  ?interaction etype:has_Relative_Species_Abundance ?relative_value .
+  FILTER(xsd:float(?relative_value) > 1 && xsd:float(?relative_value) <5).
+  ?species etype:has_Interaction ?interaction .
+    #get person of interest
+  ?person_ rdf:type etype:Person_UKC-36.
+  ?person_ etype:has_Spiecies ?species .
+  ?person_ etype:has_Interaction ?interaction .
+  ?person_ etype:has_Study_Condition ?status.
+    FILTER(str(?status)!='CRC').
+    }}
+ ?species rdf:type etype:Microbiome .
+ ?species etype:has_Name ?name .
+    #FILTER(?name !='Prevotella copri' ).
+    #get event of interest (relative abundance)
+  ?interaction rdf:type etype:Human-Microbiome-Interaction .
+  ?interaction etype:has_Relative_Species_Abundance ?relative_value .
+  FILTER(xsd:float(?relative_value) > 10).
+  ?species etype:has_Interaction ?interaction .
+    #get person of interest
+  ?person rdf:type etype:Person_UKC-36.
+  ?person etype:has_Spiecies ?species .
+  ?person etype:has_Interaction ?interaction .
+  ?person etype:has_Study_Condition ?status.
+   FILTER(str(?status)='CRC').
+  #?cancer rdf:type etype:Cancer_UKC-67961.
+#?cancer etype:has_Stage ?stage.
+  #?person etype:has_Diagnosis ?cancer
+} 
+#GROUP BY (?person)
+ORDER BY ASC(xsd:float(?relative_value))
