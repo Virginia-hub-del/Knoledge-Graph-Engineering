@@ -1,0 +1,21 @@
+QUERY 4:  
+SELECT DISTINCT ?person ?relative_value ?cig#?person (AVG(xsd:float(?relative_value)) AS ?mean)
+        WHERE {
+            # Get species of interest
+            ?species rdf:type etype:Microbiome .
+            ?species etype:has_Name 'Helicobacter pylori'.
+            ?interaction rdf:type etype:Human-Microbiome-Interaction .
+            ?interaction etype:has_Relative_Species_Abundance ?relative_value .
+            ?species etype:has_Interaction ?interaction .
+            ?person rdf:type etype:Person_UKC-36.
+            ?person etype:has_Spiecies ?species .
+            ?person etype:has_Interaction ?interaction .
+            #?person etype:has_Study_Condition ?status.
+             #FILTER(str(?status)='CRC').
+        ?risk rdf:type etype:Risk_factors_KGE-QCB1-1 .
+  ?person etype:has_Age ?Age .
+  ?risk etype:has_BMI ?bmi .
+  ?risk etype:has_Brinkman_Index ?cig .
+  #FILTER(xsd:float(?cig) > 600).
+  ?person etype:has_Risk_Factors ?risk .
+        }
