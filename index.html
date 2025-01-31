@@ -38,102 +38,94 @@
 
         <div class="section-header">
             <h2>Introduction</h2>
-    <p>Microbial communities, or microbiomes, consist of microorganisms such as bacteria, archaea, fungi, and viruses, interacting within ecosystems like soil, water, and the human body. These interactions, including competition, cooperation, and predation, influence microbiome structure, stability, and species abundance. These ecological relationships respond to environmental factors such as nutrient availability and microbial species changes, shaping the microbiome's functionality and resilience.</p>
+            <p>Microbial communities, or microbiomes, consist of microorganisms such as bacteria, archaea, fungi, and viruses, interacting within ecosystems like soil, water, and the human body. These interactions, including competition, cooperation, and predation, influence microbiome structure, stability, and species abundance. These ecological relationships respond to environmental factors such as nutrient availability and microbial species changes, shaping the microbiome's functionality and resilience.</p>
     
-    <p>To determine species relative abundance in microbial species, techniques like flow cytometry, ribosomal RNA, and metagenomic sequencing are used. The process involves clustering sequences with reference databases for taxonomic classification.</p>
+            <p>To determine species relative abundance in microbial species, techniques like flow cytometry, ribosomal RNA, and metagenomic sequencing are used. The process involves clustering sequences with reference databases for taxonomic classification.</p>
 
-    <h3>Knowledge Graph Engineering (KGE) and Reusability</h3>
-    <p>Reusability is a core principle in the KGE process defined by iTelos. The documentation created during the project enhances resource reusability by providing clear descriptions of the process and activities, aiding future use of the project's outcomes.</p>
+            <h3>Knowledge Graph Engineering (KGE) and Reusability</h3>
+            <p>Reusability is a core principle in the KGE process defined by iTelos. The documentation created during the project enhances resource reusability by providing clear descriptions of the process and activities, aiding future use of the project's outcomes.</p>
+        </div>
 
-    </ul>
-
-
-
-    <div class="section-header">
-        <h2>1. Purpose Definition</h2>
-    </div>
+        <div class="section-header">
+            <h2>1. Purpose Definition</h2>
+        </div>
       
-    <p>The main objective is to construct a Knowledge Graph revealing insights into how microorganisms interact and relate to diseases like colorectal cancer, aiming to enhance our understanding of the microbiome's role in human health.</p>
+        <p>The main objective is to construct a Knowledge Graph revealing insights into how microorganisms interact and relate to diseases like colorectal cancer, aiming to enhance our understanding of the microbiome's role in human health.</p>
     
-    <h2>Domain of Interest (DoI)</h2>
-    <p>This project examines microbial abundances in healthy individuals versus those with diseases, focusing on colorectal cancer using the <code>curatedMetagenomicData</code> (cMD) package in R. The analysis includes individual factors like smoking, alcohol, and microbial taxonomy to identify inter-species and species-disease relationships.</p>
+        <h2>Domain of Interest (DoI)</h2>
+        <p>This project examines microbial abundances in healthy individuals versus those with diseases, focusing on colorectal cancer using the <code>curatedMetagenomicData</code> (cMD) package in R. The analysis includes individual factors like smoking, alcohol, and microbial taxonomy to identify inter-species and species-disease relationships.</p>
 
-    <h2>Scenarios Definition</h2>
-    <ul>
-        <li><strong>Species Interactions (S1):</strong> Understanding how microbial species interact and influence each other’s presence and roles in the microbiome.</li>
-        <li><strong>Microbiome Epidemiology (S2):</strong> Analyzing how population-level factors like geography and socioeconomic status correlate with microbial profiles and disease outcomes.</li>
-        <li><strong>Microbiome Risk Factor Analysis (S3):</strong> Investigating how personal risk factors (e.g., smoking, diet) influence the microbiome and impact disease susceptibility.</li>
-    </ul>
+        <h2>Scenarios Definition</h2>
+        <ul>
+            <li><strong>Species Interactions (S1):</strong> Understanding how microbial species interact and influence each other’s presence and roles in the microbiome.</li>
+            <li><strong>Microbiome Epidemiology (S2):</strong> Analyzing how population-level factors like geography and socioeconomic status correlate with microbial profiles and disease outcomes.</li>
+            <li><strong>Microbiome Risk Factor Analysis (S3):</strong> Investigating how personal risk factors (e.g., smoking, diet) influence the microbiome and impact disease susceptibility.</li>
+        </ul>
 
-    <h2>Personas</h2>
-    <ul>
-        <li><strong>Haruto (P1):</strong> A 68-year-old smoker, curious about microbial interactions affecting health and cancer risk.</li>
-        <li><strong>Yuki (P2):</strong> A 66-year-old man with unexplained weight loss and potential microbiome imbalances.</li>
-        <li><strong>Emiko (P3):</strong> A 65-year-old active woman, concerned about her health and microbiome.</li>
-        <li><strong>Riku (P4):</strong> A 72-year-old man diagnosed with stage IV cancer.</li>
-        <li><strong>Kaito (P5):</strong> A 61-year-old man with blood in stool, anxious about his health.</li>
-        <li><strong>Aiko (P6):</strong> A 38-year-old woman noticing weight loss due to alcohol consumption.</li>
-        <li><strong>Hana (P7):</strong> A 54-year-old healthy woman interested in microbiome species co-occurrences.</li>
-        <li><strong>Ren (P8):</strong> A 56-year-old man diagnosed with high Helicobacter pylori abundance, concerned about cancer risk.</li>
-        <li><strong>Daiki (P9):</strong> An 81-year-old cancer survivor focused on preventing recurrence.</li>
-        <li><strong>Sakura (P10):</strong> A 74-year-old with stage II colorectal cancer and high E. coli abundance.</li>
-    </ul>
+        <h2>Personas</h2>
+        <ul>
+            <li><strong>Haruto (P1):</strong> A 68-year-old smoker, curious about microbial interactions affecting health and cancer risk.</li>
+            <li><strong>Yuki (P2):</strong> A 66-year-old man with unexplained weight loss and potential microbiome imbalances.</li>
+            <li><strong>Emiko (P3):</strong> A 65-year-old active woman, concerned about her health and microbiome.</li>
+            <li><strong>Riku (P4):</strong> A 72-year-old man diagnosed with stage IV cancer.</li>
+            <li><strong>Kaito (P5):</strong> A 61-year-old man with blood in stool, anxious about his health.</li>
+            <li><strong>Aiko (P6):</strong> A 38-year-old woman noticing weight loss due to alcohol consumption.</li>
+            <li><strong>Hana (P7):</strong> A 54-year-old healthy woman interested in microbiome species co-occurrences.</li>
+            <li><strong>Ren (P8):</strong> A 56-year-old man diagnosed with high Helicobacter pylori abundance, concerned about cancer risk.</li>
+            <li><strong>Daiki (P9):</strong> An 81-year-old cancer survivor focused on preventing recurrence.</li>
+            <li><strong>Sakura (P10):</strong> A 74-year-old with stage II colorectal cancer and high E. coli abundance.</li>
+        </ul>
 
-    <h2>Competency Questions (CQs)</h2>
-    <ul>
-        <li><strong>CQ-1 (P1-S1):</strong> What are the microbial interaction patterns in smokers and their health impacts?</li>
-        <li><strong>CQ-2 (P2-S2):</strong> How does microbiome imbalance relate to weight loss in Yuki and cancer risk?</li>
-        <li><strong>CQ-3 (P3-S3):</strong> What microbiome patterns in Emiko could contribute to cancer risk?</li>
-        <li><strong>CQ-4 (P4-S1):</strong> Which microbial species are characteristic of stage IV cancer patients like Riku?</li>
-        <li><strong>CQ-5 (P5-S3):</strong> Can Kaito’s microbiome predict his gastrointestinal disease risk?</li>
-        <li><strong>CQ-6 (P6-S2):</strong> How does alcohol consumption influence Aiko’s microbiome and cancer risk?</li>
-        <li><strong>CQ-7 (P7-S1):</strong> Which species co-occur in Hana’s microbiome with high relative abundances?</li>
-        <li><strong>CQ-8 (P8-S2):</strong> How does Helicobacter pylori abundance correlate with cancer risk in Ren?</li>
-        <li><strong>CQ-9 (P9-S3):</strong> What microbiome changes should Daiki focus on to reduce cancer recurrence risk?</li>
-        <li><strong>CQ-10 (P10-S2):</strong> How does E. coli correlate with other species in cancer patients like Sakura?</li>
-    </ul>
+        <h2>Competency Questions (CQs)</h2>
+        <ul>
+            <li><strong>CQ-1 (P1-S1):</strong> What are the microbial interaction patterns in smokers and their health impacts?</li>
+            <li><strong>CQ-2 (P2-S2):</strong> How does microbiome imbalance relate to weight loss in Yuki and cancer risk?</li>
+            <li><strong>CQ-3 (P3-S3):</strong> What microbiome patterns in Emiko could contribute to cancer risk?</li>
+            <li><strong>CQ-4 (P4-S1):</strong> Which microbial species are characteristic of stage IV cancer patients like Riku?</li>
+            <li><strong>CQ-5 (P5-S3):</strong> Can Kaito’s microbiome predict his gastrointestinal disease risk?</li>
+            <li><strong>CQ-6 (P6-S2):</strong> How does alcohol consumption influence Aiko’s microbiome and cancer risk?</li>
+            <li><strong>CQ-7 (P7-S1):</strong> Which species co-occur in Hana’s microbiome with high relative abundances?</li>
+            <li><strong>CQ-8 (P8-S2):</strong> How does Helicobacter pylori abundance correlate with cancer risk in Ren?</li>
+            <li><strong>CQ-9 (P9-S3):</strong> What microbiome changes should Daiki focus on to reduce cancer recurrence risk?</li>
+            <li><strong>CQ-10 (P10-S2):</strong> How does E. coli correlate with other species in cancer patients like Sakura?</li>
+        </ul>
 
-    <h2>General CQs</h2>
-    <ul>
-        <li>Which species are associated with cancer?</li>
-        <li>How is a species' abundance linked to cancer risk?</li>
-        <li>Which species co-occur in cancer patients?</li>
-        <li>How does microbiome composition differ between healthy individuals and those with cancer?</li>
-        <li>What is the relationship between microbiome abundance and factors like age, gender, smoking, and alcohol?</li>
-        <li>Which species show positive or negative relationships in cancer patients?</li>
-    </ul>
+        <h2>General CQs</h2>
+        <ul>
+            <li>Which species are associated with cancer?</li>
+            <li>How is a species' abundance linked to cancer risk?</li>
+            <li>Which species co-occur in cancer patients?</li>
+            <li>How does microbiome composition differ between healthy individuals and those with cancer?</li>
+            <li>What is the relationship between microbiome abundance and factors like age, gender, smoking, and alcohol?</li>
+            <li>Which species show positive or negative relationships in cancer patients?</li>
+        </ul>
 
-    <h2>Concepts Identification</h2>
-    <h3>Entities:</h3>
-    <ul>
-        <li><strong>Persons:</strong> Specific characteristics of participants.</li>
-        <li><strong>Microbiome Composition:</strong> The unique microbial makeup of each person.</li>
-        <li><strong>Cancer Stages:</strong> Various stages (1-4) of cancer progression.</li>
-        <li><strong>Healthy:</strong> Individuals without cancer.</li>
-        <li><strong>Risk Factors:</strong> Habits or characteristics influencing cancer risk.</li>
-        <li><strong>Correlation:</strong> Link between species and health conditions, categorized as High, Medium, or Low.</li>
-    </ul>
+        <h2>Concepts Identification</h2>
+        <h3>Entities:</h3>
+        <ul>
+            <li><strong>Persons:</strong> Specific characteristics of participants.</li>
+            <li><strong>Microbiome Composition:</strong> The unique microbial makeup of each person.</li>
+            <li><strong>Cancer Stages:</strong> Various stages (1-4) of cancer progression.</li>
+            <li><strong>Healthy:</strong> Individuals without cancer.</li>
+            <li><strong>Risk Factors:</strong> Habits or characteristics influencing cancer risk.</li>
+            <li><strong>Correlation:</strong> Link between species and health conditions, categorized as High, Medium, or Low.</li>
+        </ul>
 
-    <h3>Attributes:</h3>
-    <ul>
-        <li><strong>Person:</strong>
-            <ul>
-                <li>Subject ID (SRR): Unique identifier for each person.</li>
-                <li>Age: Specific age.</li>
-                <li>Age Category: Age group classification.</li>
-                <li>Gender: Male or female.</li>
-                <li>Country: Ethnicity.</li>
-                <li>Study: Research study associated with the sample.</li>
-            </ul>
-        </li>
-    </ul>
-
-
-
+        <h3>Attributes:</h3>
+        <ul>
+            <li><strong>Person:</strong>
+                <ul>
+                    <li>Subject ID (SRR): Unique identifier for each person.</li>
+                    <li>Age: Specific age.</li>
+                    <li>Age Category: Age group classification.</li>
+                    <li>Gender: Male or female.</li>
+                    <li>Country: Ethnicity.</li>
+                    <li>Study: Research study associated with the sample.</li>
+                </ul>
+            </li>
+        </ul>
 
         <img src="images/ER_final.png" alt="ER Diagram" width="600">
-
-
 
         <div class="section-header">
             <h2>2. Information Gathering</h2>
@@ -143,8 +135,10 @@
             <p>The main data source is the R package <code>CuratedMetagenomicData</code> (CMD), which includes curated human microbiome data, gene families, and species abundance. The data is processed using MetaPhlAn3 and HUMAnN3, covering over 26 studies and 5716 samples.</p>
         
             <h2>Datasets Collection</h2>
-            <p>We selected the dataset <code>2021-10-14.YachidaS_2019</code>, focusing on 'Carcinoma Cancer' with data on 712 species and 616 samples. The data was extracted and converted into CSV files containing sample metadata and relative abundance data.</p>
-        
+            <p>We selected the dataset <code>2021-10-14.YachidaS_2019</code>, focusing on 'Carcinoma Cancer' with data on 712 species and 
+
+            <p>After defining objectives and building the ER model, we move on to the information-gathering phase, focusing on data sources, cleaning, and preparing standardized datasets.</p>
+
             <h3>CSV Files</h3>
             <ul>
                 <li>Metadata file: Includes study name, subject ID, body site, diseases, age, gender, BMI, etc.</li>
