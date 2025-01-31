@@ -37,32 +37,32 @@
         <h1>KGE 2025 - Ecological Relations Between Members of the Microbiome</h1>
 
         <div class="section-header">
-            <h2>Introduction</h2>
+            <h2><strong>Introduction</strong></h2>
             <p>Microbial communities, or microbiomes, consist of microorganisms such as bacteria, archaea, fungi, and viruses, interacting within ecosystems like soil, water, and the human body. These interactions, including competition, cooperation, and predation, influence microbiome structure, stability, and species abundance. These ecological relationships respond to environmental factors such as nutrient availability and microbial species changes, shaping the microbiome's functionality and resilience.</p>
     
             <p>To determine species relative abundance in microbial species, techniques like flow cytometry, ribosomal RNA, and metagenomic sequencing are used. The process involves clustering sequences with reference databases for taxonomic classification.</p>
 
-            <h3>Knowledge Graph Engineering (KGE) and Reusability</h3>
+            <h3><strong>Knowledge Graph Engineering (KGE) and Reusability</strong></h3>
             <p>Reusability is a core principle in the KGE process defined by iTelos. The documentation created during the project enhances resource reusability by providing clear descriptions of the process and activities, aiding future use of the project's outcomes.</p>
         </div>
 
         <div class="section-header">
-            <h2>1. Purpose Definition</h2>
+            <h2><strong>1. Purpose Definition</strong></h2>
         </div>
       
         <p>The main objective is to construct a Knowledge Graph revealing insights into how microorganisms interact and relate to diseases like colorectal cancer, aiming to enhance our understanding of the microbiome's role in human health.</p>
     
-        <h2>Domain of Interest (DoI)</h2>
+        <h2><strong>Domain of Interest (DoI)</strong></h2>
         <p>This project examines microbial abundances in healthy individuals versus those with diseases, focusing on colorectal cancer using the <code>curatedMetagenomicData</code> (cMD) package in R. The analysis includes individual factors like smoking, alcohol, and microbial taxonomy to identify inter-species and species-disease relationships.</p>
 
-        <h2>Scenarios Definition</h2>
+        <h2><strong>Scenarios Definition</strong></h2>
         <ul>
             <li><strong>Species Interactions (S1):</strong> Understanding how microbial species interact and influence each other’s presence and roles in the microbiome.</li>
             <li><strong>Microbiome Epidemiology (S2):</strong> Analyzing how population-level factors like geography and socioeconomic status correlate with microbial profiles and disease outcomes.</li>
             <li><strong>Microbiome Risk Factor Analysis (S3):</strong> Investigating how personal risk factors (e.g., smoking, diet) influence the microbiome and impact disease susceptibility.</li>
         </ul>
 
-        <h2>Personas</h2>
+        <h2><strong>Personas</strong></h2>
         <ul>
             <li><strong>Haruto (P1):</strong> A 68-year-old smoker, curious about microbial interactions affecting health and cancer risk.</li>
             <li><strong>Yuki (P2):</strong> A 66-year-old man with unexplained weight loss and potential microbiome imbalances.</li>
@@ -76,7 +76,7 @@
             <li><strong>Sakura (P10):</strong> A 74-year-old with stage II colorectal cancer and high E. coli abundance.</li>
         </ul>
 
-        <h2>Competency Questions (CQs)</h2>
+        <h2><strong>Competency Questions (CQs)</strong></h2>
         <ul>
             <li><strong>CQ-1 (P1-S1):</strong> What are the microbial interaction patterns in smokers and their health impacts?</li>
             <li><strong>CQ-2 (P2-S2):</strong> How does microbiome imbalance relate to weight loss in Yuki and cancer risk?</li>
@@ -90,7 +90,7 @@
             <li><strong>CQ-10 (P10-S2):</strong> How does E. coli correlate with other species in cancer patients like Sakura?</li>
         </ul>
 
-        <h2>General CQs</h2>
+        <h2><strong>General CQs</strong></h2>
         <ul>
             <li>Which species are associated with cancer?</li>
             <li>How is a species' abundance linked to cancer risk?</li>
@@ -100,292 +100,238 @@
             <li>Which species show positive or negative relationships in cancer patients?</li>
         </ul>
 
-        <h2>Concepts Identification</h2>
-        <h3>Entities:</h3>
+        <h2><strong>Concepts Identification</strong></h2>
+        <h3><strong>Entities:</strong></h3>
         <ul>
             <li><strong>Persons:</strong> Specific characteristics of participants.</li>
             <li><strong>Microbiome Composition:</strong> The unique microbial makeup of each person.</li>
             <li><strong>Cancer Stages:</strong> Various stages (1-4) of cancer progression.</li>
             <li><strong>Healthy:</strong> Individuals without cancer.</li>
             <li><strong>Risk Factors:</strong> Habits or characteristics influencing cancer risk.</li>
-            <li><strong>Correlation:</strong> Link between species and health conditions, categorized as High, Medium, or Low.</li>
-        </ul>
-
-        <h3>Attributes:</h3>
-        <ul>
-            <li><strong>Person:</strong>
-                <ul>
-                    <li>Subject ID (SRR): Unique identifier for each person.</li>
-                    <li>Age: Specific age.</li>
-                    <li>Age Category: Age group classification.</li>
-                    <li>Gender: Male or female.</li>
-                    <li>Country: Ethnicity.</li>
-                    <li>Study: Research study associated with the sample.</li>
-                </ul>
-            </li>
-        </ul>
-
-        <img src="images/ER_final.png" alt="ER Diagram" width="600">
-
-        <div class="section-header">
-            <h2>2. Information Gathering</h2>
-            <p>After defining objectives and building the ER model, we move on to the information-gathering phase, focusing on data sources, cleaning, and preparing standardized datasets.</p>
-
-            <h2>Sources Identification</h2>
-            <p>The main data source is the R package <code>CuratedMetagenomicData</code> (CMD), which includes curated human microbiome data, gene families, and species abundance. The data is processed using MetaPhlAn3 and HUMAnN3, covering over 26 studies and 5716 samples.</p>
-        
-            <h2>Datasets Collection</h2>
-            <p>We selected the dataset <code>2021-10-14.YachidaS_2019</code>, focusing on 'Carcinoma Cancer' with data on 712 species and 
-
-            <p>After defining objectives and building the ER model, we move on to the information-gathering phase, focusing on data sources, cleaning, and preparing standardized datasets.</p>
-
-            <h3>CSV Files</h3>
-            <ul>
-                <li>Metadata file: Includes study name, subject ID, body site, diseases, age, gender, BMI, etc.</li>
-                <li>Relative Abundance file: Contains species abundance across samples.</li>
-            </ul>
-        
-            <h2>Data Cleaning and Standardization</h2>
-            <p>The collected data was cleaned by removing irrelevant columns and retaining NA values to allow for future updates. The cleaning focused on metadata columns that are important for the study.</p>
-        
-            <h3>Post-Cleaning Metadata Columns</h3>
-            <ul>
-                <li>study_name, subject_id, body_site, diseases, age, gender, BMI, disease_location, etc.</li>
-            </ul>
-        
-            <h2>Schema Generation</h2>
-            <p>The schema generation phase defines a structure for organizing data, linking <em>Person</em> and <em>Species</em> nodes with edges representing their relationships. The schema includes an event type "Correlation" that links persons to species, allowing future analysis using methods like Pearson correlation.</p>
-        
-            <h2>Formal Resource Generation</h2>
-            <p>Finalized datasets, analysis scripts, and documentation were created to ensure consistency and reproducibility in the analysis process.</p>
-        </body>
-
-        <div class="section-header">
-            <p>The lack of a clearly defined language resource for representing Etypes and their properties presents challenges. Words can be interpreted differently, and some are polysemous, making them ambiguous. To address this, concepts are associated with formal definitions using the Universal Knowledge Core (UKC), a high-quality, diversity-aware database.</p>
-        <p>Following the iTelos methodology, concepts representing Etypes, object properties, and data properties were identified in Phase 1, leading to the creation of a language dataset in CSV format. The dataset includes formally defined concepts tailored to the domain.</p>
-
-
-        <div class="section-header">
-            <h2>3. Language Definition</h2>
-             
+            <li><strong>Correlation:</stron
 
 
 
 
-
-        <h3>Tables of Concepts</h3>
-        <p>The following tables present the entity types, properties, and relationships:</p>
-        <table border="1">
-            <caption>Language Concepts for Etypes</caption>
-            <thead>
-                <tr>
-                    <th>ConceptID</th>
-                    <th>Word-en</th>
-                    <th>Gloss-en</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>UKC-36</td>
-                    <td>Person</td>
-                    <td>A human being</td>
-                </tr>
-                <tr>
-                    <td>KGE_QCB1-1</td>
-                    <td>Risk factor</td>
-                    <td>Something that makes a person more likely to get a particular disease</td>
-                </tr>
-                <tr>
-                    <td>OHMI_0000003</td>
-                    <td>Microbiome</td>
-                    <td>A biome consisting of microorganisms and their environment</td>
-                </tr>
-                <tr>
-                    <td>UKC-43176</td>
-                    <td>Species</td>
-                    <td>A taxonomic group whose members can interbreed</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <p>The next tables present the object properties and data properties related to the language concepts.</p>
-
-        <table border="1">
-            <caption>Language Concepts for Object Properties</caption>
-            <thead>
-                <tr>
-                    <th>ConceptID</th>
-                    <th>Word-en</th>
-                    <th>Gloss-en</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>UKC-681</td>
-                    <td>has_Medical_diagnosis</td>
-                    <td>Identification of a disease from its symptoms</td>
-                </tr>
-                <tr>
-                    <td>KGE-QCB1-2</td>
-                    <td>has_Species</td>
-                    <td>A person has a taxonomic group whose members can interbreed</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <table border="1">
-            <caption>Language Concepts for Data Properties</caption>
-            <thead>
-                <tr>
-                    <th>ConceptID</th>
-                    <th>Word-en</th>
-                    <th>Gloss-en</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>UKC-44477</td>
-                    <td>Taxonomy</td>
-                    <td>A classification of organisms into groups based on structure or origin</td>
-                </tr>
-                <tr>
-                    <td>UKC-26728</td>
-                    <td>Age</td>
-                    <td>How long something has existed</td>
-                </tr>
-                <tr>
-                    <td>UKC-45187</td>
-                    <td>Country</td>
-                    <td>The territory occupied by a nation</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h3>Data Filtering</h3>
-        <p>No additional data filtering is needed as the resources are already well-aligned with the data layer concepts.</p>
-    </section>       
-
-
-        <div class="section-header">
-            <h2>4. Knowledge Definition</h2>
-        </div>
-        <p>The knowledge in the graph is organized into categories such as microbiome composition, cancer stages, and health profiles of individuals, all structured within the kTelos phase. These categories are connected to relevant concepts and entities, forming a semantic structure that allows for easy retrieval of information linked to specific health conditions.</p>
-        <p>The knowledge definition process involved integrating data from multiple sources and ontologies, with a focus on the Ontology for Human-Microbe Interactions (OHMI) and the Disease Ontology (DOID). These ontologies provide detailed categorizations of microbiome interactions and diseases, including cancer stages. The knowledge resources created aim to standardize information representation, enhancing the interoperability and reusability of the Knowledge Graph (KG).</p>
-        <p>In this phase, the goal was to integrate the teleology with the structured CSV files containing cleaned data to develop a comprehensive knowledge graph. This step was essential to ensure consistency in identifying entities, data properties, and object properties while addressing data heterogeneity across different sources.</p>
-        <p>Initially, the CSV file containing relative species abundances was modified, as it originally used person IDs as row names, making integration difficult. To accurately represent the relationships between individuals and microbial species, the CSV structure was redefined to have person IDs as a column, allowing a single person to be associated with multiple species across different rows.</p>
-        <p>The process involved three key steps:</p>
-        <ul>
-            <li><strong>Entity Matching:</strong> Ensuring consistency by using person IDs as unique identifiers across datasets.</li>
-            <li><strong>Entity Identification:</strong> Introducing unique identifiers (URIs) for entities like Risk Factor, Cancer, and Microbiome.</li>
-            <li><strong>Data Mapping:</strong> Linking the teleology to the data using Karma, producing Turtle-RDF files that were merged into a final knowledge graph.</li>
-        </ul>
-        <p>Throughout this phase, data heterogeneity was managed and the final output was a structured knowledge graph, which serves as the foundation for further analysis and knowledge extraction.</p>
-    </div>
-
-        <div class="section-header">
-            <h2>5. Entity Definition</h2>
-            <p>The goal is to integrate the teleology with CSV files to identify entities, data properties, and object properties. This ensures effective management of data from different sources and avoids heterogeneity issues.</p>
-    
-            <p>Initially, the CSV file was modified to better model the interaction between species and individuals. The person IDs were moved to a column for proper data integration. A person can be associated with multiple species, so person IDs appear multiple times in the dataset.</p>
             
-            <h3>Entity Definition Sub-Activities:</h3>
-            <ul>
-                <li><strong>Entity Matching:</strong> The person entity exists in both files, and the person_id is used as a unique identifier to match individuals across datasets.</li>
-                <li><strong>Entity Identification:</strong> Entities such as Risk Factor, Cancer, and Person are identified, with unique identifiers for Risk Factor and Cancer, and the Microbiome entity is identified by species name.</li>
-                <li><strong>Data Mapping:</strong> Karma links the teleology to the data, including all entities with their URIs. The RDF files produced by Karma were merged into one final graph.</li>
-            </ul>
-        
-            <h3>Figures:</h3>
-            <figure>
-                <img src="images/new_karma1.PNG" alt="Karma visualization 1" style="width:100%">
-                <figcaption>Karma Visualization 1</figcaption>
-            </figure>
-        
-            
+                <div class="section-header">
+                    <p>The lack of a clearly defined language resource for representing Etypes and their properties presents challenges. Words can be interpreted differently, and some are polysemous, making them ambiguous. To address this, concepts are associated with formal definitions using the Universal Knowledge Core (UKC), a high-quality, diversity-aware database.</p>
+                    <p>Following the iTelos methodology, concepts representing Etypes, object properties, and data properties were identified in Phase 1, leading to the creation of a language dataset in CSV format. The dataset includes formally defined concepts tailored to the domain.</p>
+                
+                    <div class="section-header">
+                        <h2>3. Language Definition</h2>
+                
+                        <h3>Tables of Concepts</h3>
+                        <p>The following tables present the entity types, properties, and relationships:</p>
+                        <table border="1">
+                            <caption>Language Concepts for Etypes</caption>
+                            <thead>
+                                <tr>
+                                    <th>ConceptID</th>
+                                    <th>Word-en</th>
+                                    <th>Gloss-en</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>UKC-36</td>
+                                    <td>Person</td>
+                                    <td>A human being</td>
+                                </tr>
+                                <tr>
+                                    <td>KGE_QCB1-1</td>
+                                    <td>Risk factor</td>
+                                    <td>Something that makes a person more likely to get a particular disease</td>
+                                </tr>
+                                <tr>
+                                    <td>OHMI_0000003</td>
+                                    <td>Microbiome</td>
+                                    <td>A biome consisting of microorganisms and their environment</td>
+                                </tr>
+                                <tr>
+                                    <td>UKC-43176</td>
+                                    <td>Species</td>
+                                    <td>A taxonomic group whose members can interbreed</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                
+                        <p>The next tables present the object properties and data properties related to the language concepts.</p>
+                
+                        <table border="1">
+                            <caption>Language Concepts for Object Properties</caption>
+                            <thead>
+                                <tr>
+                                    <th>ConceptID</th>
+                                    <th>Word-en</th>
+                                    <th>Gloss-en</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>UKC-681</td>
+                                    <td>has_Medical_diagnosis</td>
+                                    <td>Identification of a disease from its symptoms</td>
+                                </tr>
+                                <tr>
+                                    <td>KGE-QCB1-2</td>
+                                    <td>has_Species</td>
+                                    <td>A person has a taxonomic group whose members can interbreed</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                
+                        <table border="1">
+                            <caption>Language Concepts for Data Properties</caption>
+                            <thead>
+                                <tr>
+                                    <th>ConceptID</th>
+                                    <th>Word-en</th>
+                                    <th>Gloss-en</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>UKC-44477</td>
+                                    <td>Taxonomy</td>
+                                    <td>A classification of organisms into groups based on structure or origin</td>
+                                </tr>
+                                <tr>
+                                    <td>UKC-26728</td>
+                                    <td>Age</td>
+                                    <td>How long something has existed</td>
+                                </tr>
+                                <tr>
+                                    <td>UKC-45187</td>
+                                    <td>Country</td>
+                                    <td>The territory occupied by a nation</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                
+                        <h3>Data Filtering</h3>
+                        <p>No additional data filtering is needed as the resources are already well-aligned with the data layer concepts.</p>
+                    </section>       
+                
+                    <div class="section-header">
+                        <h2>4. Knowledge Definition</h2>
+                    </div>
+                    <p>The knowledge in the graph is organized into categories such as microbiome composition, cancer stages, and health profiles of individuals, all structured within the kTelos phase. These categories are connected to relevant concepts and entities, forming a semantic structure that allows for easy retrieval of information linked to specific health conditions.</p>
+                    <p>The knowledge definition process involved integrating data from multiple sources and ontologies, with a focus on the Ontology for Human-Microbe Interactions (OHMI) and the Disease Ontology (DOID). These ontologies provide detailed categorizations of microbiome interactions and diseases, including cancer stages. The knowledge resources created aim to standardize information representation, enhancing the interoperability and reusability of the Knowledge Graph (KG).</p>
+                    <p>In this phase, the goal was to integrate the teleology with the structured CSV files containing cleaned data to develop a comprehensive knowledge graph. This step was essential to ensure consistency in identifying entities, data properties, and object properties while addressing data heterogeneity across different sources.</p>
+                    <p>Initially, the CSV file containing relative species abundances was modified, as it originally used person IDs as row names, making integration difficult. To accurately represent the relationships between individuals and microbial species, the CSV structure was redefined to have person IDs as a column, allowing a single person to be associated with multiple species across different rows.</p>
+                    <p>The process involved three key steps:</p>
+                    <ul>
+                        <li><strong>Entity Matching:</strong> Ensuring consistency by using person IDs as unique identifiers across datasets.</li>
+                        <li><strong>Entity Identification:</strong> Introducing unique identifiers (URIs) for entities like Risk Factor, Cancer, and Microbiome.</li>
+                        <li><strong>Data Mapping:</strong> Linking the teleology to the data using Karma, producing Turtle-RDF files that were merged into a final knowledge graph.</li>
+                    </ul>
+                    <p>Throughout this phase, data heterogeneity was managed and the final output was a structured knowledge graph, which serves as the foundation for further analysis and knowledge extraction.</p>
+                </div>
+                
+                    <div class="section-header">
+                        <h2>5. Entity Definition</h2>
+                        <p>The goal is to integrate the teleology with CSV files to identify entities, data properties, and object properties. This ensures effective management of data from different sources and avoids heterogeneity issues.</p>
+                
+                        <p>Initially, the CSV file was modified to better model the interaction between species and individuals. The person IDs were moved to a column for proper data integration. A person can be associated with multiple species, so person IDs appear multiple times in the dataset.</p>
+                        
+                        <h3>Entity Definition Sub-Activities:</h3>
+                        <ul>
+                            <li><strong>Entity Matching:</strong> The person entity exists in both files, and the person_id is used as a unique identifier to match individuals across datasets.</li>
+                            <li><strong>Entity Identification:</strong> Entities such as Risk Factor, Cancer, and Person are identified, with unique identifiers for Risk Factor and Cancer, and the Microbiome entity is identified by species name.</li>
+                            <li><strong>Data Mapping:</strong> Karma links the teleology to the data, including all entities with their URIs. The RDF files produced by Karma were merged into one final graph.</li>
+                        </ul>
+                    
+                        <h3>Figures:</h3>
+                        <figure>
+                            <img src="images/new_karma1.PNG" alt="Karma visualization 1" style="width:100%">
+                            <figcaption>Karma Visualization 1</figcaption>
+                        </figure>
+                
+                        <figure>
+                            <img src="images/karma2.png" alt="Karma visualization 2" style="width:100%">
+                            <figcaption>Karma Visualization 2</figcaption>
+                        </figure>
+                    
+                
+                    <div class="section-header">
+                        <h2>6. Evaluation</h2>
+                        <p>This section describes the evaluation of the final outcome of the iTelos methodology, including the Knowledge Graph (KG) evaluation, data and query execution assessments, and overall performance evaluation.</p>
+                
+                        <h3>Knowledge Graph Evaluation</h3>
+                        <ul>
+                            <li>Final KG information statistics (number of entities, types, properties, etc.)</li>
+                            <li>Evaluation of knowledge and data layers</li>
+                            <li>Query execution testing through competency queries</li>
+                        </ul>
+                    
+                        <h3>Metrics</h3>
+                        <h4>Coverage Evaluation</h4>
+                        <p><strong>At the EType level:</strong> Coverage for competency queries: <strong>1</strong></p>
+                        <p><strong>At the Property level:</strong> Coverage for properties: <strong>0.94</strong> (18/19)</p>
+                    
+                        <h4>Teleontology vs Reference Ontologies (ROs)</h4>
+                        <p><strong>At the EType level:</strong> Coverage: <strong>0.0001</strong></p>
+                        <p><strong>At the Property level:</strong> Coverage: <strong>0.1</strong></p>
+                    
+                        <h3>Data Layer Connectivity</h3>
+                        <ul>
+                            <li><strong>Entity Connectivity:</strong> Measures interconnection between entities.</li>
+                            <li><strong>Property Connectivity:</strong> Measures linkages between entities and properties.</li>
+                        </ul>
+                    
+                        <h3>SPARQL Query Execution</h3>
+                        <p>SPARQL was used to answer competency questions. Key results include:</p>
+                    
+                        <h4>Query Results</h4>
+                        <ul>
+                            <li><strong>Query 1:</strong> Retrieves the maximum average relative abundance of species in cancer patients.</li>
+                            <li><strong>Query 2:</strong> Identifies species with high relative abundance in cancer patients with stage IV cancer and high alcohol consumption.</li>
+                            <li><strong>Query 3:</strong> Highlights species with high relative abundance in cancer patients and low in healthy individuals.</li>
+                            <li><strong>Query 4:</strong> Answers CQ-8, identifying individuals with Helicobacter pylori.</li>
+                            <li><strong>Query 5:</strong> Measures the distance in relative abundance between species in 'Healthy' vs 'CRC' populations.</li>
+                        </ul>
+                    </div>
 
-            <figure>
-                <img src="images/karma2.png" alt="Karma visualization 2" style="width:100%">
-                <figcaption>Karma Visualization 2</figcaption>
-            </figure>
-        
+                    
 
 
-        <div class="section-header">
-            <h2>6. Evaluation</h2>
-            <p>This section describes the evaluation of the final outcome of the iTelos methodology, including the Knowledge Graph (KG) evaluation, data and query execution assessments, and overall performance evaluation.</p>
-
-            <h3>Knowledge Graph Evaluation</h3>
-            <ul>
-                <li>Final KG information statistics (number of entities, types, properties, etc.)</li>
-                <li>Evaluation of knowledge and data layers</li>
-                <li>Query execution testing through competency queries</li>
-            </ul>
-        
-            <h3>Metrics</h3>
-            <h4>Coverage Evaluation</h4>
-            <p><strong>At the EType level:</strong> Coverage for competency queries: <strong>1</strong></p>
-            <p><strong>At the Property level:</strong> Coverage for properties: <strong>0.94</strong> (18/19)</p>
-        
-            <h4>Teleontology vs Reference Ontologies (ROs)</h4>
-            <p><strong>At the EType level:</strong> Coverage: <strong>0.0001</strong></p>
-            <p><strong>At the Property level:</strong> Coverage: <strong>0.1</strong></p>
-        
-            <h3>Data Layer Connectivity</h3>
-            <ul>
-                <li><strong>Entity Connectivity:</strong> Measures interconnection between entities.</li>
-                <li><strong>Property Connectivity:</strong> Measures linkages between entities and properties.</li>
-            </ul>
-        
-            <h3>SPARQL Query Execution</h3>
-            <p>SPARQL was used to answer competency questions. Key results include:</p>
-        
-            <h4>Query Results</h4>
-            <ul>
-                <li><strong>Query 1:</strong> Retrieves the maximum average relative abundance of species in cancer patients.</li>
-                <li><strong>Query 2:</strong> Identifies species with high relative abundance in cancer patients with stage IV cancer and high alcohol consumption.</li>
-                <li><strong>Query 3:</strong> Highlights species with high relative abundance in cancer patients and low in healthy individuals.</li>
-                <li><strong>Query 4:</strong> Answers CQ-8, identifying individuals with Helicobacter pylori.</li>
-                <li><strong>Query 5:</strong> Measures the distance in relative abundance between species in 'Healthy' vs 'CRC' populations.</li>
-            </ul>
         
               
 
 
 
         <div class="section-header">
-            <h2>7. Metadata Definition</h2>
-            <p>This section defines the metadata for the resources produced throughout the project. The metadata describes both the final and intermediate results of the project. It is crucial for sharing the resources through data catalogs such as DataScientia.</p>
-        
-            <ul>
-                <li><strong>Project Metadata</strong></li>
-                <li><strong>Language Resource Metadata</strong></li>
-                <li><strong>Knowledge Resource Metadata</strong></li>
-                <li><strong>Data Resource Metadata</strong></li>
-                <li><strong>People Metadata</strong></li>
-            </ul>
-            
+    <h2>7. Metadata Definition</h2>
+    <p>This section defines the metadata for the resources produced throughout the project. The metadata describes both the final and intermediate results of the project. It is crucial for sharing the resources through data catalogs such as DataScientia.</p>
+    
+    <ul>
+        <li><strong>Project Metadata</strong></li>
+        <li><strong>Language Resource Metadata</strong></li>
+        <li><strong>Knowledge Resource Metadata</strong></li>
+        <li><strong>Data Resource Metadata</strong></li>
+        <li><strong>People Metadata</strong></li>
+    </ul>
+</div>
 
-        <div class="section-header">
-            <h2>8. Open issues</h2>
-            <p>We successfully built a knowledge graph that represents interactions between individuals, their microbiome species, and species interactions. However, our dataset only included one cancer type, which can be expanded by integrating data on multiple cancers in future studies.</p>
+<div class="section-header">
+    <h2>8. Open issues</h2>
+    <p>We successfully built a knowledge graph that represents interactions between individuals, their microbiome species, and species interactions. However, our dataset only included one cancer type, which can be expanded by integrating data on multiple cancers in future studies.</p>
 
     <p>A key limitation is the inability to statistically evaluate the results due to the arbitrary threshold for classifying species' relative abundances. Future research should use machine learning for better data analysis and insights.</p>
 
     <p>Other studies may group specific microbiome species and compare their relative abundances. The lack of time-series data in this study could also limit deeper insights into species-species interactions over time.</p>
+</div>
 
-    </ul>
+<div class="section-header">
+    <h2>Revision History</h2>
+</div>
+<p><strong>Revision Date:</strong> January 28, 2025</p>
+<p><strong>Author:</strong> Virginia Leombruni, Eleonora Giuliani, Marc Shebaby</p>
+<p><strong>Description of Changes:</strong> Document created.</p>
 
-
-
-        <div class="section-header">
-            <h2>Revision History</h2>
-        </div>
-        <p><strong>Revision Date:</strong> January 28, 2025</p>
-        <p><strong>Author:</strong> Virginia Leombruni, Eleonora Giuliani, Marc Shebaby</p>
-        <p><strong>Description of Changes:</strong> Document created.</p>
-
-        <p>This document outlines the ongoing work on the Knowledge Graph Project and will be updated as new findings and advancements are made.</p>
-        <a href="https://github.com/Virginia-hub-del/Knowledge-Graph-Engineering" target="_blank">https://github.com/Virginia-hub-del/Knowledge-Graph-Engineering</a>
+<p>This document outlines the ongoing work on the Knowledge Graph Project and will be updated as new findings and advancements are made.</p>
+<a href="https://github.com/Virginia-hub-del/Knowledge-Graph-Engineering" target="_blank">https://github.com/Virginia-hub-del/Knowledge-Graph-Engineering</a>
 
     </div>
 </body>
