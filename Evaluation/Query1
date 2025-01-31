@@ -1,0 +1,39 @@
+Query 1: 
+PREFIX etype: <http://knowdive.disi.unitn.it/etype#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+
+select ?species (COUNT(?species) AS ?occurrence) (AVG(xsd:float(?relative_value))AS ?mean)
+where {
+   #get species of interest
+ ?species rdf:type etype:Microbiome .
+ ?species etype:has_Name ?name .
+    #get event of interest (relative abundance)
+  ?interaction rdf:type etype:Human-Microbiome-Interaction .
+  ?interaction etype:has_Relative_Species_Abundance ?relative_value .
+  FILTER(xsd:float(?relative_value) > 3.44).
+  ?species etype:has_Interaction ?interaction .
+    #get person of interest
+  ?person rdf:type etype:Person_UKC-36.
+  ?person etype:has_Spiecies ?species .
+  ?person etype:has_Interaction ?interaction .
+  ?person etype:has_Study_Condition ?status.
+    
+  ?risk rdf:type etype:Risk_factors_KGE-QCB1-1 .
+  ?person etype:has_Age ?Age .
+  ?risk etype:has_Alcohol_Level ?alcohol .
+  ?risk etype:has_Brinkman_Index ?cig_level .
+  FILTER(xsd:float(?cig_level) > 600).
+  FILTER(xsd:float(?alcohol) > 300).
+    
+  ?person etype:has_Risk_Factors ?risk .
+    
+  ?cancer rdf:type etype:Cancer_UKC-67961.
+  ?cancer etype:has_Stage ?stage.
+  FILTER(str(?stage)!='NA').
+  ?person etype:has_Diagnosis ?cancer.
+   
+}
+    GROUP BY   ?species #?cig_level ?alcohol 
+ORDER BY DESC (?occurrence)
