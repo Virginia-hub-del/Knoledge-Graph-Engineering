@@ -68,6 +68,13 @@ The key questions addressed in this section include:
 
 Additionally, this section summarizes the most relevant issues encountered during the iTelos process and describes the approaches attempted to resolve them, as well as any proposed solutions that were not implemented.
 
+
+## Static Web Page Link  
+
+You can access the static web page for the Knowledge Graph Engineering project at the following link:  
+👉 https://virginia-hub-del.github.io/Knowledge-Graph-Engineering/
+
+
 ## Contributing
 If you would like to contribute to the project, please follow these steps:
 
